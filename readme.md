@@ -1,3 +1,5 @@
+![alt tag](https://raw.githubusercontent.com/sterjakovigor/hot-key/master/logo.jpg)
+
 Listens hotkeys events in browser.
 
 ## How to use?
@@ -21,7 +23,8 @@ const config = {
     {
       name: 'ctrl+z',
       codes: [17, 90],
-    },        {
+    },
+    {
       name: 'ctrl+shift+z',
       codes: [17, 16, 90],
     },
