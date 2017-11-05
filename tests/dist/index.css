@@ -1,0 +1,27 @@
+#app {
+  margin-bottom: 16px;
+  display: block;
+  clear: both;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#app * {
+
+  outline: none;
+
+}
+
+.editor {
+
+  border: 1px solid grey;
+  padding: 10px;
+  min-height: 100px;
+
+}
+
+.editor p {
+
+  margin: 5px;
+
+}

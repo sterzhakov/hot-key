@@ -1,0 +1,34 @@
+{
+  "name": "hot-key",
+  "version": "1.0.0",
+  "description": "Listens hotkeys events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sterjakovigor/hot-key.git"
+  },
+  "keywords": [
+    "hotkeys",
+    "shortcuts",
+    "keyboard",
+    "events",
+    "key",
+    "shortcut",
+    "key",
+    "hot",
+    "key",
+    "hotkey"
+  ],
+  "author": "Igor Sterjakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sterjakovigor/hot-key/issues"
+  },
+  "homepage": "https://github.com/sterjakovigor/hot-key#readme",
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
