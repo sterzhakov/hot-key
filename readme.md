@@ -2,6 +2,10 @@
 
 Listens hotkeys events in browser.
 
+```bash
+  npm i hot-key
+```
+
 ## How to use?
 
 ```javascript
