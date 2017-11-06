@@ -89,7 +89,12 @@ class HotKey {
 
   handleKeyup(event) {
 
-    const cmdKeyCodes = [91,93]
+    const cmdKeyCodes = [
+      91,  // chrome
+      93,  // chrome
+      224, // firefox
+      17,  // opera
+    ]
 
     if (cmdKeyCodes.indexOf(event.keyCode) > -1) {
 
