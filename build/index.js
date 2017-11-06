@@ -89,7 +89,17 @@ class HotKey {
 
   handleKeyup(event) {
 
-    this._codes = this._codes.filter(code => code != event.keyCode)
+    const cmdKeyCodes = [91,93]
+
+    if (cmdKeyCodes.indexOf(event.keyCode) > -1) {
+
+      this._codes = []
+
+    } else {
+
+      this._codes = this._codes.filter(code => code != event.keyCode)
+
+    }
 
   }
 
