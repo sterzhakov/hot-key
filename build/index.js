@@ -31,7 +31,9 @@ class HotKey {
 
   }
 
-  on(keys, handler) {
+  on(key, handler) {
+
+    const keys = Array.isArray(key) ? key : [ key ]
 
     this._handlers = keys.reduce((handlers, key) => {
       return Object.assign({}, handlers, { [key]: handler })

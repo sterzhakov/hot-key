@@ -88,7 +88,8 @@ describe('HotKey', () => {
 
     const hotkey = new HotKey(config)
 
-    hotkey.on(['1,2','3,4'], spy.callback)
+    hotkey.on('1,2', spy.callback)
+    hotkey.on('3,4', spy.callback)
 
     hotkey.handleKeydown({ keyCode: 3 })
 

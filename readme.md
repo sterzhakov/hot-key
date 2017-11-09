@@ -48,14 +48,20 @@ const config = {
 // create object
 const hotKey = new HotKey(config)
 
-// assign event
-hotKey.on(['ctrl+z', 'cmd+z'], (event) => {
+// assign events
+hotKey.on('ctrl+z', (event) => {
 
   console.log('history back')
 
 })
 
-// assign another event
+hotKey.on('cmd+z', (event) => {
+
+  console.log('history back')
+
+})
+
+// or like this
 hotKey.on(['ctrl+shift+z', 'cmd+shift+z'], (event) => {
 
   console.log('history forward')
@@ -63,7 +69,6 @@ hotKey.on(['ctrl+shift+z', 'cmd+shift+z'], (event) => {
 })
 
 // also you can extend rules on the fly like this:
-
 hotkey.setRules([
   ...hotkey.getRules()
   {

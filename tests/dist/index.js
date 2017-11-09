@@ -100,7 +100,9 @@ class HotKey {
 
   }
 
-  on(keys, handler) {
+  on(key, handler) {
+
+    const keys = Array.isArray(key) ? key : [ key ]
 
     this._handlers = keys.reduce((handlers, key) => {
       return Object.assign({}, handlers, { [key]: handler })
@@ -385,7 +387,8 @@ describe('HotKey', () => {
 
     const hotkey = new HotKey(config)
 
-    hotkey.on(['1,2','3,4'], spy.callback)
+    hotkey.on('1,2', spy.callback)
+    hotkey.on('3,4', spy.callback)
 
     hotkey.handleKeydown({ keyCode: 3 })
 
