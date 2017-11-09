@@ -69,8 +69,8 @@ hotKey.on(['ctrl+shift+z', 'cmd+shift+z'], (event) => {
 })
 
 // also you can extend rules on the fly like this:
-hotkey.setRules([
-  ...hotkey.getRules()
+hotKey.setRules([
+  ...hotKey.getRules()
   {
     name: 'cmd+a',
     codes: [91, 65],
