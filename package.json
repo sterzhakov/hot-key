@@ -1,6 +1,6 @@
 {
   "name": "hot-key",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Listens hotkeys events.",
   "main": "build/index.js",
   "scripts": {

@@ -72,11 +72,9 @@ hotKey.on(['ctrl+shift+z', 'cmd+shift+z'], (event) => {
 hotkey.setRules([
   ...hotkey.getRules()
   {
-    {
-      name: 'cmd+a',
-      codes: [91, 65],
-    },
-  }
+    name: 'cmd+a',
+    codes: [91, 65],
+  },
 ])
 
 // start listen keyup and keydown events
