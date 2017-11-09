@@ -53,6 +53,8 @@ hotKey.on('ctrl+z', (event) => {
 
   console.log('history back')
 
+  // in event.rule you can access to matched rule
+
 })
 
 hotKey.on('cmd+z', (event) => {
