@@ -3,6 +3,67 @@ const createEditor = require('./helpers/createEditor')
 
 describe('HotKey', () => {
 
+  it('setRules()', () => {
+
+    const config = {
+      domNode: createEditor(),
+      delay: 30,
+      symbols: 3,
+      rules: []
+    }
+
+    const hotkey = new HotKey(config)
+
+    hotkey.setRules([
+      {
+        name: '1,2',
+        codes: [2, 1],
+      },
+      {
+        name: '3,4',
+        codes: [4, 3],
+      },
+    ])
+
+    expect(hotkey._rules).toEqual([
+      {
+        name: '1,2',
+        codes: [1,2],
+      },
+      {
+        name: '3,4',
+        codes: [3,4],
+      },
+    ])
+
+  })
+
+  it('getRules()', () => {
+
+    const rules = [
+      {
+        name: '1,2',
+        codes: [1,2],
+      },
+      {
+        name: '3,4',
+        codes: [3,4],
+      },
+    ]
+
+    const config = {
+      domNode: createEditor(),
+      delay: 30,
+      symbols: 3,
+      rules
+    }
+
+    const hotkey = new HotKey(config)
+
+    expect(hotkey.getRules()).toEqual(rules)
+
+  })
+
   it('detect rules', (done) => {
 
     const config = {
@@ -105,6 +166,5 @@ describe('HotKey', () => {
 
 
   })
-
 
 })

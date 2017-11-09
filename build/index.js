@@ -10,9 +10,7 @@ class HotKey {
     this._codes = []
     this._handlers = {}
 
-    this._rules = config.rules.map(rule =>
-      Object.assign({}, rule, { codes: rule.codes.sort() })
-    )
+    this.setRules(config.rules)
 
     this.handleKeydown = this.handleKeydown.bind(this)
     this.handleKeyup = this.handleKeyup.bind(this)
@@ -38,6 +36,23 @@ class HotKey {
     this._handlers = keys.reduce((handlers, key) => {
       return Object.assign({}, handlers, { [key]: handler })
     }, this._handlers)
+
+  }
+
+  setRules(rules) {
+
+    this._rules = rules.map(rule =>
+      Object.assign({},
+        rule,
+        { codes: rule.codes.sort() }
+      )
+    )
+
+  }
+
+  getRules() {
+
+    return this._rules
 
   }
 

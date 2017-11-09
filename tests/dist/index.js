@@ -79,9 +79,7 @@ class HotKey {
     this._codes = []
     this._handlers = {}
 
-    this._rules = config.rules.map(rule =>
-      Object.assign({}, rule, { codes: rule.codes.sort() })
-    )
+    this.setRules(config.rules)
 
     this.handleKeydown = this.handleKeydown.bind(this)
     this.handleKeyup = this.handleKeyup.bind(this)
@@ -107,6 +105,23 @@ class HotKey {
     this._handlers = keys.reduce((handlers, key) => {
       return Object.assign({}, handlers, { [key]: handler })
     }, this._handlers)
+
+  }
+
+  setRules(rules) {
+
+    this._rules = rules.map(rule =>
+      Object.assign({},
+        rule,
+        { codes: rule.codes.sort() }
+      )
+    )
+
+  }
+
+  getRules() {
+
+    return this._rules
 
   }
 
@@ -222,7 +237,7 @@ const HotKey = __webpack_require__(0)
 
 describe('Demo on test page', () => {
 
-  fit('HotKey', () => {
+  it('HotKey', () => {
 
     const config = {
       domNode: document.querySelector('.editor'),
@@ -284,6 +299,67 @@ const HotKey = __webpack_require__(0)
 const createEditor = __webpack_require__(5)
 
 describe('HotKey', () => {
+
+  it('setRules()', () => {
+
+    const config = {
+      domNode: createEditor(),
+      delay: 30,
+      symbols: 3,
+      rules: []
+    }
+
+    const hotkey = new HotKey(config)
+
+    hotkey.setRules([
+      {
+        name: '1,2',
+        codes: [2, 1],
+      },
+      {
+        name: '3,4',
+        codes: [4, 3],
+      },
+    ])
+
+    expect(hotkey._rules).toEqual([
+      {
+        name: '1,2',
+        codes: [1,2],
+      },
+      {
+        name: '3,4',
+        codes: [3,4],
+      },
+    ])
+
+  })
+
+  it('getRules()', () => {
+
+    const rules = [
+      {
+        name: '1,2',
+        codes: [1,2],
+      },
+      {
+        name: '3,4',
+        codes: [3,4],
+      },
+    ]
+
+    const config = {
+      domNode: createEditor(),
+      delay: 30,
+      symbols: 3,
+      rules
+    }
+
+    const hotkey = new HotKey(config)
+
+    expect(hotkey.getRules()).toEqual(rules)
+
+  })
 
   it('detect rules', (done) => {
 
@@ -387,7 +463,6 @@ describe('HotKey', () => {
 
 
   })
-
 
 })
 

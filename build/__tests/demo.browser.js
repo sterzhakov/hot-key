@@ -2,7 +2,7 @@ const HotKey = require('../index')
 
 describe('Demo on test page', () => {
 
-  fit('HotKey', () => {
+  it('HotKey', () => {
 
     const config = {
       domNode: document.querySelector('.editor'),
