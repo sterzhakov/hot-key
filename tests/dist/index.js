@@ -79,7 +79,7 @@ class HotKey {
     this._codes = []
     this._handlers = {}
 
-    this.setRules(config.rules)
+    this.setRules(config.rules || [])
 
     this.handleKeydown = this.handleKeydown.bind(this)
     this.handleKeyup = this.handleKeyup.bind(this)
